@@ -11,7 +11,8 @@ void main()
    continua = 's';
    contador = 0;
 
-   int n1, n2, operacao, soma;
+   int n1, n2, operacao, soma, sub, mult, divi;
+    float divf;
 
    while (continua == 's')
    {
@@ -19,6 +20,10 @@ void main()
       n2 = 0;
       operacao = 0;
       soma = 0;
+      sub = 0;
+      mult = 0;
+      divf = 0;
+      divi = 0;
 
       // ---->come�o<----
 
@@ -38,8 +43,43 @@ void main()
          soma = n1 + n2;
 
          printf("\n %d + %d = %d \n", n1, n2, soma);
+      }
+      else if (operacao == 2) {
+        sub = n1 - n2;
+
+        printf("\n %d - %d = %d \n", n1, n2, sub);
+      }
+      else if (operacao == 3) {
+        sub = n2 - n1;
+
+        printf("\n %d - %d = %d \n", n2, n1, sub);
+      }
+      else if (operacao == 4) {
+        mult = n1 * n2;
+
+        printf("\n %d x %d = %d \n", n1, n2, mult);
+      }
+      else if (operacao == 5) {
+        divf = n1 / n2;
+
+        printf("\n %d / %d = %.d \n", n1, n2, divf);
+      }
+      else if (operacao == 6) {
+        divf = n2 / n1;
+
+        printf("\n %d / %d = %.d \n", n2, n1, divf);
+      }
+      else if (operacao == 7) {
+        divi = n1 / n2;
+
+        printf("\n %d / %d = %d \n", n1, n2, divi);
+      }
+      else if (operacao == 8) {
+        divi = n2 / n1;
+
+        printf("\n %d / %d = %d \n", n2, n1, divi);
       };
-      
+
       // ---->final<----
 
       printf("Repentindo....\n");
@@ -48,7 +88,6 @@ void main()
 
       printf("Tecle 's' e aguarde se deseja continuar \n");
       continua = getch();
-      sleep(1);
    }
 
    if (contador == 0)
