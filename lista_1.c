@@ -26,6 +26,14 @@ void main()
     float valor, valorJuros, juros, valorFinal, rendimento;
     int meses, mesesWhile;
 
+    // exercicio 4
+    float numero, numeroF;
+    int numeroI, numeroA;
+
+    // exercicio 5
+    int numeroQE, quadradoElevado, elevado;
+    float numeroQEresultado;
+
     while (continua == 's')
     {
         // iniciando variaveis
@@ -50,6 +58,14 @@ void main()
         rendimento = 0;
         meses = 0;
         mesesWhile = 0;
+        numero = 0.0;
+        numeroA = 0;
+        numeroF = 0.0;
+        numeroI = 0;
+        numeroQE = 0;
+        quadradoElevado = 0;
+        elevado = 0;
+        numeroQEresultado = 0;
 
         // ---->comeco<----
 
@@ -155,33 +171,69 @@ void main()
         }
         else if (exercicio == 3)
         {
-                    printf("qual sera o valor do deposito? \n");
-        scanf("%f", &valor);
+            printf("qual sera o valor do deposito? \n");
+            scanf("%f", &valor);
 
-        printf("qual sera o juros? (em porcentagem e sem o simbolo)\n");
-        scanf("%f", &juros);
+            printf("qual sera o juros? (em porcentagem e sem o simbolo)\n");
+            scanf("%f", &juros);
 
-        printf("quantos meses vai durar o envestimento? \n");
-        scanf("%d", &meses);
+            printf("quantos meses vai durar o envestimento? \n");
+            scanf("%d", &meses);
 
-        juros = juros / 100;
-        valorFinal = valor;
-        mesesWhile = meses;
+            juros = juros / 100;
+            valorFinal = valor;
+            mesesWhile = meses;
 
-        while (mesesWhile > 0)
+            while (mesesWhile > 0)
+            {
+                valorJuros = valorFinal;
+                valorJuros = valorJuros * juros;
+                valorFinal = valorFinal + valorJuros;
+                mesesWhile--;
+            };
+
+            rendimento = valorFinal - valor;
+
+            printf("seu investimento de %.2f com juros de %.2f durante %d mes(es) deu um rendimento de %.2f e ao total %.2f \n", valor, juros, meses, rendimento, valorFinal);
+        }
+        else if (exercicio == 4)
         {
-            valorJuros = valorFinal;
-            valorJuros = valorJuros * juros;
-            valorFinal = valorFinal + valorJuros;
-            mesesWhile--;
-        };
+            printf("Qual sera o numero real?\n");
+            scanf("%f", &numero);
 
-        rendimento = valorFinal - valor;
+            numeroI = numero;
+            numeroF = numero - numeroI;
+            numeroA = round(numero);
 
-        printf("seu investimento de %.2f com juros de %.2f durante %d mes(es) deu um rendimento de %.2f e ao total %.2f \n", valor, juros, meses, rendimento, valorFinal);
-        } else if (exercicio == 4)
+            printf("o seu numero %.5f tem como a parte inteira %.d, como parte fracional %.5f e é arredondado para %d \n", numero, numeroI, numeroF, numeroA);
+        }
+        else if (exercicio == 5)
         {
-            
+            printf("Qual sera o numero? \n");
+            scanf("%d", &numeroQE);
+
+            printf("qual sera a operacao que voce deseja realizar? \n 1 - Raiz quadrada \n 2 - Elevado\n");
+            scanf("%d", &quadradoElevado);
+
+            if (quadradoElevado == 1)
+            {
+                numeroQEresultado = sqrt(numeroQE);
+
+                printf("a raiz quadrada de %d é %f\n", numeroQE, numeroQEresultado);
+            }
+            else if (quadradoElevado == 2)
+            {
+                printf("voce gostaria de elevar o numero %d a qual potencia?\n", numeroQE);
+                scanf("%d", &elevado);
+
+                numeroQEresultado = pow(numeroQE, elevado);
+
+                printf("%d elevado a %d potencia é equivalente a %.f\n", numeroQE, elevado, numeroQEresultado);
+            }
+            else
+            {
+                printf("comando não reconhecido tente novamente\n");
+            };
         };
 
         // ---->final<----

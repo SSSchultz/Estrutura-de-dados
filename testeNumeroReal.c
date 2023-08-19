@@ -4,49 +4,47 @@
 #include <ctype.h>
 #include <time.h>
 
-
-
-void main() {
-
-int continua, contador;
-continua = 's';
-contador = 0;
-
-float numero, numeroF;
-int numeroI, numeroA;
-
-while (continua == 's')
+void main()
 {
-    numero = 0;
-    numeroA = 0;
-    numeroF = 0;
-    numeroI = 0;
 
-     // ---->come�o<----
+   int continua, contador;
+   continua = 's';
+   contador = 0;
 
-    printf("Qual sera o numero real?\n");
-    scanf("%.f", &numero);
+   float numero, numeroF;
+   int numeroI, numeroA;
 
-    numeroI = numero;
-    numeroF = numero - numeroI;
-    numeroA = round(numero);
+   while (continua == 's')
+   {
+      numero = 0.0;
+      numeroA = 0;
+      numeroF = 0.0;
+      numeroI = 0;
 
-    printf("o seu numero %f tem como a parte inteira %f, como parte fracional %f e é arredondado para %i \n", numero, numeroI, numeroF, numeroA);
+      // ---->come�o<----
 
+      printf("Qual sera o numero real?\n");
+      scanf("%f", &numero);
 
-    // ---->final<----
+      numeroI = numero;
+      numeroF = numero - numeroI;
+      numeroA = round(numero);
 
-   printf("Repentindo....\n");
+      printf("o seu numero %.5f tem como a parte inteira %.d, como parte fracional %.5f e é arredondado para %d \n", numero, numeroI, numeroF, numeroA);
 
-   contador++;
+      // ---->final<----
 
-   printf("Tecle 's' e aguarde se deseja continuar \n");
-   continua = getch();
-   sleep(1);
-}
+      printf("Repentindo....\n");
 
-if (contador == 0)
-   printf("O bloco NAO foi repetido.");
-else printf("O bloco foi repetido %d vezes", contador);
+      contador++;
 
+      printf("Tecle 's' e aguarde se deseja continuar \n");
+      continua = getch();
+      sleep(1);
+   }
+
+   if (contador == 0)
+      printf("O bloco NAO foi repetido.");
+   else
+      printf("O bloco foi repetido %d vezes", contador);
 }
