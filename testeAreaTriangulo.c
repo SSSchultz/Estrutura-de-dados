@@ -11,64 +11,103 @@ int main()
     continua = 's';
     contador = 0;
 
-    int lado1E7, lado2E7, lado3E7, baseE7, alturaE7, areaE7, angulo1E7, angulo2E7, angulo3E7;
+    int  tipoE7;
+    float alturaE7, areaE7, semiPE7, lado1E7, lado2E7, lado3E7, baseE7, isoscelesAE7;
 
     while (continua == 's')
     {
+        lado1E7 = 0.0, lado2E7 = 0.0, lado3E7 = 0.0, baseE7 = 0.0, tipoE7 = 0, isoscelesAE7 = 0.0, alturaE7 = 0.0, areaE7 = 0.0, semiPE7 = 0.0;
         // ---->come�o<----
 
         printf("Qual o tamanho do primeiro lado? \n");
-        scanf("%d", &lado1E7);
+        scanf("%.2f", &lado1E7);
 
         printf("Qual o tamanho do segundo lado? \n");
-        scanf("%d", &lado2E7);
+        scanf("%.2f", &lado2E7);
 
         printf("Qual o tamanho do terceiro lado? \n");
-        scanf("%d", &lado3E7);
-
-        printf("Qual o tamanho do primeiro angulo interno? \n");
-        scanf("%d", angulo1E7);
-
-        printf("Qual o tamanho do segundo angulo interno? \n");
-        scanf("%d", angulo2E7);
-
-        printf("Qual o tamanho do terceiro angulo interno? \n");
-        scanf("%d", angulo3E7);
+        scanf("%.2f", &lado3E7);
 
         if (lado1E7 > lado2E7 + lado3E7 || lado2E7 > lado1E7 + lado3E7 || lado3E7 > lado1E7 + lado2E7)
         {
             printf("Seu triangulo não é valido pois um dos lados é maior que a soma dos outros 2");
-        }
-        else if (angulo1E7 + angulo2E7 + angulo3E7 != 180)
-        {
-            printf("Seu triangulo não é valido pois a soma dos angulos internos é diferente de 180");
-        }
+        };
         
+        if (lado1E7 == lado2E7 == lado3E7)
+        {
+            // equilatero
+            tipoE7 = 1;
+        }
+        else if (lado1E7 != lado2E7 != lado3E7)
+        {
+            // escaleno
+            tipoE7 = 2;
+        }
+        else if (lado1E7 == lado2E7 != lado3E7 || lado2E7 == lado3E7 != lado1E7 || lado1E7 == lado3E7 != lado2E7)
+        {
+            // isosceles
+            tipoE7 = 3;
+        };
 
         baseE7 = lado1E7;
 
         if (baseE7 < lado2E7)
         {
             baseE7 = lado2E7;
-        }
+
+            lado2E7 = lado1E7;
+            
+            isoscelesAE7 = lado2E7;
+        };
 
         if (baseE7 < lado3E7)
         {
             baseE7 = lado3E7;
+
+            lado3E7 = lado1E7;
+
+            isoscelesAE7 = lado3E7;
         };
 
-        if (lado1E7 < lado2E7 + lado3E7 && lado2E7 < lado1E7 + lado3E7 && lado3E7 < lado1E7 + lado2E7)
+
+
+        if (tipoE7 == 1)
         {
-            alturaE7 = (lado1E7 + lado2E7 + lado3E7) / 2;
+            alturaE7 = (lado1E7 * sqrt(3)) / 2;
+
+            areaE7 = (lado1E7 * alturaE7) / 2;
+
+            printf("deu 1 \n");
+        }
+        else if (tipoE7 == 2)
+        {
+            semiPE7 = (float)(baseE7 + lado2E7 + lado3E7) / 2;
+
+            printf("%d // %d // %d // %.2f \n", baseE7, lado2E7, lado3E7);
+
+            alturaE7 = 2/baseE7 * sqrt(semiPE7 * (semiPE7 - baseE7) * (semiPE7 - lado2E7) * (semiPE7 - lado3E7));
+
+            printf("%.2f // %.2f // %.2f // %.2f // %.2f \n", alturaE7, baseE7, semiPE7, lado2E7, lado3E7);
 
             areaE7 = (baseE7 * alturaE7) / 2;
-        }
-        else
-        {
-            
-        }
 
-        printf("%d // %d // %d // %d // %d // %d", lado1E7, lado2E7, lado3E7, baseE7, alturaE7, areaE7);
+            printf("%.2f // %.2f // %.2f \n", areaE7, baseE7, alturaE7);
+
+            printf("deu 2 \n");
+        }
+        else if (tipoE7 == 3)
+        {
+            alturaE7 = sqrt(pow(isoscelesAE7, 2) - (pow(baseE7, 2)/4));
+
+            areaE7 = (baseE7 * alturaE7) / 2;
+
+            printf("deu 3 \n");
+        };
+
+        printf("%d // %.2f // %.2f // %.2f \n", tipoE7, semiPE7, alturaE7, areaE7);
+
+
+        printf("o seu triangulo tem uma area de aproximadamente %.2f e uma altura de aproximadamente %2.f \n", areaE7, alturaE7);
 
         // ---->final<----
 
