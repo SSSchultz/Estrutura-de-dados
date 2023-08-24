@@ -20,13 +20,13 @@ int main()
         // ---->come�o<----
 
         printf("Qual o tamanho do primeiro lado? \n");
-        scanf("%.2f", &lado1E7);
+        scanf("%f", &lado1E7);
 
         printf("Qual o tamanho do segundo lado? \n");
-        scanf("%.2f", &lado2E7);
+        scanf("%f", &lado2E7);
 
         printf("Qual o tamanho do terceiro lado? \n");
-        scanf("%.2f", &lado3E7);
+        scanf("%f", &lado3E7);
 
         if (lado1E7 > lado2E7 + lado3E7 || lado2E7 > lado1E7 + lado3E7 || lado3E7 > lado1E7 + lado2E7)
         {
