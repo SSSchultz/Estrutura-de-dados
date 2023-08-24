@@ -4,6 +4,11 @@
 #include <ctype.h>
 #include <time.h>
 
+    /*
+        Professor tentei deixar o codigo de forma mais organizada porem sei que teria ainda muito o que otimizar nele.
+        Neste arquivo eu coloquei todos os exercicios de forma a ligalos em um unico programa repetivel.
+        Os arquivos individuais de cada exercicio estão em " https://github.com/SSSchultz/Estrutura-de-dados/tree/main/lista%201%20arquivos%20C "
+    */
 void main()
 {
     // looping
