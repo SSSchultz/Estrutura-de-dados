@@ -35,6 +35,19 @@ int main()
     int comprarE6, produtoE6, quantidadeE6, totalProdutosE6;
     float totalE6;
 
+    // exercicio 7
+    int operacaoE7;
+    float num1E7, num2E7, num3E7, priE7, segE7, terE7;
+
+    // exercicio 8
+    int num1E8, num2E8, num3E8, priE8, segE8, terE8;
+
+    // exercicio 9
+    int anosE9, mesesE9, diasE9, diasTotalE9;
+
+    // exercicio 10
+    int diasE10, multiplicadorAnoE10, anosE10, restoAnoE10, multiplicadorMesE10, restoMesE10, mesE10;
+
     while (continua == 's')
     {
         exercicio = 0;
@@ -44,6 +57,10 @@ int main()
         pedidoE4 = 0, quantidadeE4 = 0, totalE4 = 0.0;
         alturaE5 = 0.0, idealE5 = 0.0, sexoE5 = '0';
         comprarE6 = 's', totalE6 = 0.0, totalProdutosE6 = 0;
+        num1E7 = 0, num2E7 = 0, num3E7 = 0, priE7 = 0, segE7 = 0, terE7 = 0, operacaoE7 = 0;
+        num1E8 = 0, num2E8 = 0, num3E8 = 0, priE8 = 0, segE8 = 0, terE8 = 0;
+        anosE9 = 0, mesesE9 = 0, diasE9 = 0, diasTotalE9 = 0;
+        diasE10 = 0, multiplicadorAnoE10 = 0, anosE10 = 0, restoAnoE10 = 0, multiplicadorMesE10 = 0, restoMesE10 = 0, mesE10 = 0;
 
         // ---->come�o<----
 
@@ -235,6 +252,273 @@ int main()
             }
 
             printf("O total a pagar nos %d produtos comprados e de R$%.2f", totalProdutosE6, totalE6);
+        }
+        else if (exercicio == 7)
+        {
+            printf("Qual operacao gostaria de realizar? \n 1 - ordem crescente \n 2 - ordem decrescente \n 3 - maior no meio \n");
+            scanf("%d", &operacaoE7);
+
+            printf("Qual sera o primeiro numero? \n");
+            scanf("%f", &num1E7);
+
+            printf("Qual sera o sgundo numero? \n");
+            scanf("%f", &num2E7);
+
+            printf("Qual sera o terceiro numero? \n");
+            scanf("%f", &num3E7);
+
+            if (operacaoE7 == 1)
+            {
+                if (num1E7 >= num2E7 && num1E7 >= num3E7)
+                {
+                    terE7 = num1E7;
+
+                    if (num2E7 > num3E7)
+                    {
+                        priE7 = num3E7;
+                        segE7 = num2E7;
+                    }
+                    else
+                    {
+                        priE7 = num2E7;
+                        segE7 = num3E7;
+                    }
+                }
+                else if (num2E7 >= num1E7 && num2E7 >= num3E7)
+                {
+                    terE7 = num2E7;
+
+                    if (num1E7 > num3E7)
+                    {
+                        priE7 = num3E7;
+                        segE7 = num1E7;
+                    }
+                    else
+                    {
+                        priE7 = num1E7;
+                        segE7 = num3E7;
+                    }
+                }
+                else if (num3E7 >= num2E7 && num3E7 >= num1E7)
+                {
+                    terE7 = num3E7;
+
+                    if (num2E7 > num1E7)
+                    {
+                        priE7 = num1E7;
+                        segE7 = num2E7;
+                    }
+                    else
+                    {
+                        priE7 = num2E7;
+                        segE7 = num1E7;
+                    }
+                }
+            }
+            else if (operacaoE7 == 2)
+            {
+                if (num1E7 <= num2E7 && num1E7 <= num3E7)
+                {
+                    terE7 = num1E7;
+
+                    if (num2E7 < num3E7)
+                    {
+                        priE7 = num3E7;
+                        segE7 = num2E7;
+                    }
+                    else
+                    {
+                        priE7 = num2E7;
+                        segE7 = num3E7;
+                    }
+                }
+                else if (num2E7 <= num1E7 && num2E7 <= num3E7)
+                {
+                    terE7 = num2E7;
+
+                    if (num1E7 < num3E7)
+                    {
+                        priE7 = num3E7;
+                        segE7 = num1E7;
+                    }
+                    else
+                    {
+                        priE7 = num1E7;
+                        segE7 = num3E7;
+                    }
+                }
+                else if (num3E7 <= num2E7 && num3E7 <= num1E7)
+                {
+                    terE7 = num3E7;
+
+                    if (num2E7 < num1E7)
+                    {
+                        priE7 = num1E7;
+                        segE7 = num2E7;
+                    }
+                    else
+                    {
+                        priE7 = num2E7;
+                        segE7 = num1E7;
+                    }
+                }
+            }
+            else if (operacaoE7 == 3)
+            {
+                if (num1E7 >= num2E7 && num1E7 >= num3E7)
+                {
+                    segE7 = num1E7;
+
+                    if (num2E7 > num3E7)
+                    {
+                        priE7 = num3E7;
+                        terE7 = num2E7;
+                    }
+                    else
+                    {
+                        priE7 = num2E7;
+                        terE7 = num3E7;
+                    }
+                }
+                else if (num2E7 >= num1E7 && num2E7 >= num3E7)
+                {
+                    segE7 = num2E7;
+
+                    if (num1E7 > num3E7)
+                    {
+                        priE7 = num3E7;
+                        terE7 = num1E7;
+                    }
+                    else
+                    {
+                        priE7 = num1E7;
+                        terE7 = num3E7;
+                    }
+                }
+                else if (num3E7 >= num2E7 && num3E7 >= num1E7)
+                {
+                    segE7 = num3E7;
+
+                    if (num2E7 > num1E7)
+                    {
+                        priE7 = num1E7;
+                        terE7 = num2E7;
+                    }
+                    else
+                    {
+                        priE7 = num2E7;
+                        terE7 = num1E7;
+                    }
+                }
+            }
+            else
+            {
+                printf("algo deu errado tente novamente");
+            }
+
+            printf(" %f \n %f \n %f \n", priE7, segE7, terE7);
+        }
+        else if (exercicio == 8)
+        {
+            printf("Qual sera o primeiro numero? \n");
+            scanf("%d", &num1E8);
+
+            printf("Qual sera o sgundo numero? \n");
+            scanf("%d", &num2E8);
+
+            printf("Qual sera o terceiro numero? \n");
+            scanf("%d", &num3E8);
+
+            if (num1E8 >= 0 && num2E8 >= 0 && num3E8 >= 0)
+            {
+
+                if (num1E8 <= num2E8 && num1E8 <= num3E8)
+                {
+                    terE8 = num1E8;
+
+                    if (num2E8 < num3E8)
+                    {
+                        priE8 = num3E8;
+                        segE8 = num2E8;
+                    }
+                    else
+                    {
+                        priE8 = num2E8;
+                        segE8 = num3E8;
+                    }
+                }
+                else if (num2E8 <= num1E8 && num2E8 <= num3E8)
+                {
+                    terE8 = num2E8;
+
+                    if (num1E8 < num3E8)
+                    {
+                        priE8 = num3E8;
+                        segE8 = num1E8;
+                    }
+                    else
+                    {
+                        priE8 = num1E8;
+                        segE8 = num3E8;
+                    }
+                }
+                else if (num3E8 <= num2E8 && num3E8 <= num1E8)
+                {
+                    terE8 = num3E8;
+
+                    if (num2E8 < num1E8)
+                    {
+                        priE8 = num1E8;
+                        segE8 = num2E8;
+                    }
+                    else
+                    {
+                        priE8 = num2E8;
+                        segE8 = num1E8;
+                    }
+                }
+            }
+
+            printf(" %d \n %d \n %f \n", priE8, segE8, terE8);
+        }
+        else if (exercicio == 9)
+        {
+            printf("Quantos anos voce tem? \n");
+            scanf("%d", &anosE9);
+
+            printf("Quantos meses desde o seu aniversario? \n");
+            scanf("%d", &mesesE9);
+
+            printf("Quantos dias que o mes comecou? \n");
+            scanf("%d", &diasE9);
+
+            diasTotalE9 = (anosE9 * 365) + ((mesesE9 - 1) * 30) + diasE9;
+
+            printf("A sua idade em dias e aproximadamente %d \n", diasTotalE9);
+        }
+        else if (exercicio == 0)
+        {
+            printf("Quantos dias voce tem? \n");
+            scanf("%d", &diasE10);
+
+            if (diasE10 >= 365)
+            {
+                multiplicadorAnoE10 = diasE10 / 365;
+                restoAnoE10 = diasE10 % 365;
+
+                anosE10 = 1 * multiplicadorAnoE10;
+            }
+
+            if (restoAnoE10 >= 30)
+            {
+                multiplicadorMesE10 = restoAnoE10 / 30;
+                restoMesE10 = restoAnoE10 % 30;
+
+                mesE10 = 1 * multiplicadorMesE10;
+            }
+            diasE10 = restoMesE10;
+
+            printf("%d anos, %d meses, %d dias \n", anosE10, mesE10, diasE10);
         }
 
         // ---->final<----

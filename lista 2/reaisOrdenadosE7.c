@@ -11,79 +11,176 @@ int main()
     continua = 's';
     contador = 0;
 
-    int operacao;
-    float num1, num2, num3, pri, seg, ter;
+    int operacaoE7;
+    float num1E7, num2E7, num3E7, priE7, segE7, terE7;
 
     while (continua == 's')
     {
+        num1E7 = 0, num2E7 = 0, num3E7 = 0, priE7 = 0, segE7 = 0, terE7 = 0;
         // ---->come�o<----
 
-        printf("Qual operacao gostaria de realizar? \n 1 - ordem crescente \n 2 - ordem decrescent \n 3 - maior no meio \n");
-        scanf("%d", &operacao);
+        printf("Qual operacao gostaria de realizar? \n 1 - ordem crescente \n 2 - ordem decrescente \n 3 - maior no meio \n");
+        scanf("%d", &operacaoE7);
 
         printf("Qual sera o primeiro numero? \n");
-        scanf("%f", &num1);
+        scanf("%f", &num1E7);
 
         printf("Qual sera o sgundo numero? \n");
-        scanf("%f", &num2);
+        scanf("%f", &num2E7);
 
         printf("Qual sera o terceiro numero? \n");
-        scanf("%f", &num3);
+        scanf("%f", &num3E7);
 
-        pri = num1;
-        seg = num1;
-        ter = num1;
-
-        if (operacao == 1)
-            
-            if (pri > num1)
+        if (operacaoE7 == 1)
+        {
+            if (num1E7 >= num2E7 && num1E7 >= num3E7)
             {
-                pri = num1;
-            }
+                terE7 = num1E7;
 
-            if (pri > num2)
+                if (num2E7 > num3E7)
+                {
+                    priE7 = num3E7;
+                    segE7 = num2E7;
+                }
+                else
+                {
+                    priE7 = num2E7;
+                    segE7 = num3E7;
+                }
+            }
+            else if (num2E7 >= num1E7 && num2E7 >= num3E7)
             {
-                pri = num2;
-            }
+                terE7 = num2E7;
 
-            if (pri > num3)
+                if (num1E7 > num3E7)
+                {
+                    priE7 = num3E7;
+                    segE7 = num1E7;
+                }
+                else
+                {
+                    priE7 = num1E7;
+                    segE7 = num3E7;
+                }
+            }
+            else if (num3E7 >= num2E7 && num3E7 >= num1E7)
             {
-                pri = num3;
-            }
+                terE7 = num3E7;
 
-            if (seg > num1)
+                if (num2E7 > num1E7)
+                {
+                    priE7 = num1E7;
+                    segE7 = num2E7;
+                }
+                else
+                {
+                    priE7 = num2E7;
+                    segE7 = num1E7;
+                }
+            }
+        }
+        else if (operacaoE7 == 2)
+        {
+            if (num1E7 <= num2E7 && num1E7 <= num3E7)
             {
-                seg = num1;
-            }
+                terE7 = num1E7;
 
-            if (seg > num2)
+                if (num2E7 < num3E7)
+                {
+                    priE7 = num3E7;
+                    segE7 = num2E7;
+                }
+                else
+                {
+                    priE7 = num2E7;
+                    segE7 = num3E7;
+                }
+            }
+            else if (num2E7 <= num1E7 && num2E7 <= num3E7)
             {
-                seg = num2;
-            }
+                terE7 = num2E7;
 
-            if (seg > num3)
+                if (num1E7 < num3E7)
+                {
+                    priE7 = num3E7;
+                    segE7 = num1E7;
+                }
+                else
+                {
+                    priE7 = num1E7;
+                    segE7 = num3E7;
+                }
+            }
+            else if (num3E7 <= num2E7 && num3E7 <= num1E7)
             {
-                seg = num3;
-            }
+                terE7 = num3E7;
 
-            if (ter > num1)
+                if (num2E7 < num1E7)
+                {
+                    priE7 = num1E7;
+                    segE7 = num2E7;
+                }
+                else
+                {
+                    priE7 = num2E7;
+                    segE7 = num1E7;
+                }
+            }
+        }
+        else if (operacaoE7 == 3)
+        {
+            if (num1E7 >= num2E7 && num1E7 >= num3E7)
             {
-                ter = num1;
-            }
+                segE7 = num1E7;
 
-            if (ter > num2)
+                if (num2E7 > num3E7)
+                {
+                    priE7 = num3E7;
+                    terE7 = num2E7;
+                }
+                else
+                {
+                    priE7 = num2E7;
+                    terE7 = num3E7;
+                }
+            }
+            else if (num2E7 >= num1E7 && num2E7 >= num3E7)
             {
-                ter = num2;
-            }
+                segE7 = num2E7;
 
-            if (ter > num3)
+                if (num1E7 > num3E7)
+                {
+                    priE7 = num3E7;
+                    terE7 = num1E7;
+                }
+                else
+                {
+                    priE7 = num1E7;
+                    terE7 = num3E7;
+                }
+            }
+            else if (num3E7 >= num2E7 && num3E7 >= num1E7)
             {
-                ter = num3;
-            }
+                segE7 = num3E7;
 
+                if (num2E7 > num1E7)
+                {
+                    priE7 = num1E7;
+                    terE7 = num2E7;
+                }
+                else
+                {
+                    priE7 = num2E7;
+                    terE7 = num1E7;
+                }
+            }
+        }
+        else
+        {
+            printf("algo deu errado tente novamente");
         }
 
-        printf(" %f \n %f \n %f", pri, seg, ter);
+        printf(" %f \n %f \n %f \n", priE7, segE7, terE7);
 
         // ---->final<----
 
@@ -100,6 +197,5 @@ int main()
         printf("O bloco NAO foi repetido.");
     else
         printf("O bloco foi repetido %d vezes", contador);
-
     return 0;
 }
