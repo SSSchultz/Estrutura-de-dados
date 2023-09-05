@@ -16,7 +16,7 @@ while (continua == 's')
 {
      // ---->come�o<----
 
-printf("teste");
+   printf("teste");
 
     // ---->final<----
 
