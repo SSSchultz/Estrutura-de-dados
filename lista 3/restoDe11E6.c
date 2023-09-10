@@ -12,11 +12,23 @@ int continua, contadorLooping;
 continua = 's';
 contadorLooping = 0;
 
+int resto;
+
 while (continua == 's')
 {
      // ---->come�o<----
 
-   printf("teste");
+    for (int contador = 1000; contador < 2000; contador++)
+    {
+        resto = contador % 11;
+
+        if (resto == 5)
+        {
+            printf("%d, ", contador);
+        }
+        
+    }
+    
 
     // ---->final<----
 
