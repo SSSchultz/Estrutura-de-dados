@@ -1,6 +1,6 @@
 #include <stdio.h>
 // #include <stdlib.h> // https://www.tutorialspoint.com/c_standard_library/stdlib_h.htm
-// #include <math.h> // https://linguagemc.com.br/a-biblioteca-math-h/
+#include <math.h>  // https://linguagemc.com.br/a-biblioteca-math-h/
 #include <ctype.h> // https://www.tutorialspoint.com/c_standard_library/ctype_h.htm
 // #include <time.h> // https://www.tutorialspoint.com/c_standard_library/time_h.htm
 
@@ -11,39 +11,30 @@ int main()
     continua = 's';
     contadorLooping = 0;
 
-    int codigoE1;
-    float nota1E1, nota2E1, nota3E1, mediaE1;
+    int contadorE2, numE2, totalE2;
+    float mediaE2;
 
     while (continua == 's')
     {
-        codigoE1 = 1, nota1E1 = 0, nota2E1 = 0, nota3E1 = 0, mediaE1 = 0;
-        ;
+        contadorE2 = 0, numE2 = 0, totalE2 = 0, mediaE2 = 0;
         // ---->come�o<----
 
-        while (codigoE1 != 0)
+        printf("Qual sera o primeiro numero? \n");
+        scanf("%d", &numE2);
+
+        while (numE2 != 0)
         {
+            totalE2 += numE2;
 
-            printf("qual o seu codigo? \n");
-            scanf("%d", &codigoE1);
+            printf("Qual sera o proximo numero? \n");
+            scanf("%d", &numE2);
 
-            if (codigoE1 == 0)
-            {
-                break;
-            }
-
-            printf("qual e a primeira nota? \n");
-            scanf("%f", &nota1E1);
-
-            printf("qual e a segunda nota? \n");
-            scanf("%f", &nota2E1);
-
-            printf("qual e a terceira nota? \n");
-            scanf("%f", &nota3E1);
-
-            mediaE1 = (nota1E1 + nota2E1 + nota3E1) / 3;
-
-            printf("a sua media e = %.1f \n", mediaE1);
+            contadorE2++;
         }
+
+        mediaE2 = (float) totalE2 / contadorE2;
+
+        printf("A media desses %d numeros e %g \n", contadorE2, mediaE2);
 
         // ---->final<----
 
